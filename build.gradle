@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id "se.thinkcode.cucumber-runner" version "0.0.8"
+}
+
+project.ext {
+    cucumberVersion = '4.2.6'
+}
+
+compileJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+dependencies {
+    implementation 'org.flywaydb:flyway-core:6.0.7'
+    implementation 'org.jdbi:jdbi3-core:3.10.1'
+    implementation 'org.jdbi:jdbi3-sqlobject:3.10.1'
+    implementation 'com.h2database:h2:1.4.200'
+    implementation 'org.apache.tomcat:tomcat-jdbc:9.0.17'
+    implementation 'org.slf4j:slf4j-simple:1.7.28'
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.assertj:assertj-core:3.13.2'
+    testImplementation 'org.mockito:mockito-core:3.1.0'
+}
+
+test {
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}
+
+repositories {
+    mavenCentral()
+}
