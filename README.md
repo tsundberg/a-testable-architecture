@@ -1,14 +1,21 @@
 # A testable architecture
 
 An example on how to use configurable dependencies for 
-* fast verification
-* slow but using the real database
 
-We need fast feedback as well a accurate feedback. Using the dependencies 
-properly give us
-* Speed - fast feedback so we can know when we broke something
-* Confidence - we verify using the real database and therefore we know that we can connect to the database
-* Low cost - chaning the implementation is not a lot a of work and there cheap
+* fast verification using a fake
+
+* slow verification but using the real thing
+
+We need confidence that the system works properly, fast feedback as well a accurate feedback. Using the dependencies 
+properly give us.
+
+* Confidence - we verify using the real implementation and therefore we know 
+  that we can trust the real thing. Verifying a fake with the same test 
+  gives us reason to trust a fake implementation.
+  
+* Speed - fast feedback so we can know when we broke something even when a fake is used.
+
+* Low cost - chaining the implementation easier with fast feedback and therefore cheap.
 
 ## Building
 
